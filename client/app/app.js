@@ -27,11 +27,12 @@ import util from '../components/util/util.module';
 import PollsComponent from './polls/polls.component';
 import NewpollComponent from './newpoll/newpoll.component';
 import MypollsComponent from './mypolls/mypolls.component';
+import AboutComponent from './about/about.component';
 
 import './app.scss';
 
 angular.module('smgVotingAppApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, _Auth,
-  account, admin, navbar, footer, main, constants, util,PollsComponent, NewpollComponent, MypollsComponent
+  account, admin, navbar, footer, main, constants, util,PollsComponent, NewpollComponent, MypollsComponent, AboutComponent
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
