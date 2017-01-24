@@ -1,4 +1,8 @@
 'use strict';
+import about from './about.component';
+import {
+  AboutController
+} from './about.component';
 
 describe('Component: AboutComponent', function() {
   // load the controller's module

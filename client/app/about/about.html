@@ -1,2 +1,34 @@
-<div>This is the about view.</div>
-<p>Add the technology stack used .. etc</p>
+<head>
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
+</head>
+<div class="container">
+   <div id=title>
+      <h1>About</h1>
+      <h3 id="titleDescr">This web application was created as part of FreeCodeCamp backend certification.</h3>
+      <p>Below you may find a list of used technologies and a link to their corresponding website where you can get further information about them</p>
+   </div>
+   <br>
+   <div id="techType">Front-End</div>
+   <div class="table-responsive" id="techTable">
+      <table class="table">
+         <thead id="techTitle">
+            <tr>
+               <th></th>
+               <th>Name</th>
+               <th>Description</th>
+            </tr>
+         </thead>
+         <tbody id="techBody">
+            <tr ng-repeat="tech in $ctrl.frontEndTech">
+               <td id="techLogo">
+                  <a href="{{tech.url}}" target="_blank" alt="{{tech.alt_image}}">
+                     <p><img src="{{tech.image}}" style = "width: 100px; height: 100px;">
+                  </a>
+               </td>
+               <td id="techName">{{tech.techName}}</td>
+               <td id="techDescr">{{tech.description}}</td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</div>
