@@ -36,7 +36,7 @@ describe('Polls API Router:', function() {
     expect(pollsIndex).to.equal(routerStub);
   });
 
-  describe('GET /api/pollss', function() {
+  describe('GET /api/polls', function() {
     it('should route to polls.controller.index', function() {
       expect(routerStub.get
         .withArgs('/', 'pollsCtrl.index')
@@ -44,7 +44,7 @@ describe('Polls API Router:', function() {
     });
   });
 
-  describe('GET /api/pollss/:id', function() {
+  describe('GET /api/polls/:id', function() {
     it('should route to polls.controller.show', function() {
       expect(routerStub.get
         .withArgs('/:id', 'pollsCtrl.show')
@@ -52,7 +52,7 @@ describe('Polls API Router:', function() {
     });
   });
 
-  describe('POST /api/pollss', function() {
+  describe('POST /api/polls', function() {
     it('should route to polls.controller.create', function() {
       expect(routerStub.post
         .withArgs('/', 'pollsCtrl.create')
@@ -60,7 +60,7 @@ describe('Polls API Router:', function() {
     });
   });
 
-  describe('PUT /api/pollss/:id', function() {
+  describe('PUT /api/polls/:id', function() {
     it('should route to polls.controller.upsert', function() {
       expect(routerStub.put
         .withArgs('/:id', 'pollsCtrl.upsert')
@@ -68,7 +68,7 @@ describe('Polls API Router:', function() {
     });
   });
 
-  describe('PATCH /api/pollss/:id', function() {
+  describe('PATCH /api/polls/:id', function() {
     it('should route to polls.controller.patch', function() {
       expect(routerStub.patch
         .withArgs('/:id', 'pollsCtrl.patch')
@@ -76,7 +76,7 @@ describe('Polls API Router:', function() {
     });
   });
 
-  describe('DELETE /api/pollss/:id', function() {
+  describe('DELETE /api/polls/:id', function() {
     it('should route to polls.controller.destroy', function() {
       expect(routerStub.delete
         .withArgs('/:id', 'pollsCtrl.destroy')

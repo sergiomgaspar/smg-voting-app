@@ -5,7 +5,7 @@ export default function($stateProvider) {
   $stateProvider
     .state('newpoll', {
       url: '/newpoll',
-      template: '<newpoll></newpoll>',
-	  authenticate: 'user'
+      template: '<newpoll></newpoll>'//,
+	    //authenticate: 'user' // TEST TEST
     });
 }
