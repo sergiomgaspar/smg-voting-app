@@ -3,9 +3,10 @@
 import mongoose from 'mongoose';
 
 var PollsSchema = new mongoose.Schema({
-  name: String,
-  info: String,
-  active: Boolean
+  title: String,
+  description: String,
+  createWho: String,
+  items: [] //{name:String, votes: String, id: String}
 });
 
 export default mongoose.model('Polls', PollsSchema);

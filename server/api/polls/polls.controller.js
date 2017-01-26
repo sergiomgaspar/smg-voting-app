@@ -80,6 +80,8 @@ export function show(req, res) {
 
 // Creates a new Polls in the DB
 export function create(req, res) {
+  console.log("++++SMG - RECEIVED POST REQUEST");
+  console.log("++++SMG - REQ: "+JSON.stringify(req.body));
   return Polls.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));

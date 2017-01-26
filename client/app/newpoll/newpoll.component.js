@@ -15,6 +15,7 @@ type Poll = {
 type Item = {
   name: string;
   votes: int;
+  id: int
 };
 
 export class NewpollComponent {
@@ -28,52 +29,79 @@ export class NewpollComponent {
   submitted = false;
   $state;
   nextItem='';
+  selectedRow=0;
+  countItems=0;
+  $http;
+
   /*@ngInject*/
-  constructor($state) {
-    this.message = 'Hello';
+  constructor($state, $http) {
     this.$state = $state;
-    this.poll.items = [{name:"AAA"},{name:"BBB"}];
+    this.$http = $http;
   }
 
   addPoll(form){
     
     this.submitted = true;
-    if(form.$valid) {
-      
-     /*return this.Auth.createUser({
-        name: this.user.name,
-        email: this.user.email,
-        password: this.user.password
-      })
-        .then(() => {
-          // Account created, redirect to home
-          this.$state.go('main');
-        })
-        .catch(err => {
-          err = err.data;
-          this.errors = {};
-          // Update validity of form fields that match the mongoose errors
-          angular.forEach(err.errors, (error, field) => {
-            form[field].$setValidity('mongoose', false);
-            this.errors[field] = error.message;
+    if(form.$valid && this.countItems > 1) {
+        
+        // POST + Json.stringify do this.poll
+//        var msg = JSON.stringify(angular.toJson(this.poll)); // Use this func because of angular DOM stuff
+ //       var msg = JSON.stringify(this.poll);
+  var msg = angular.toJson(this.poll); // Use this func because of angular DOM stuff
+        console.log("this.poll: "+msg);
+        this.$http({
+        url: '/api/polls',
+        method: "POST",
+              //data:JSON.stringify(this.poll)
+              
+             data: msg
+          })
+          .then(function(response) {
+                  // success
+                  console.log("POST WORKED: "+response);
+          }, 
+          function(response) { // optional
+                  // failed
+                  console.log("POST FAILED: "+response)
           });
-        });*/
-        console.log("this.poll.title: "+this.poll.title);
-        console.log("this.poll.description: "+this.poll.description);
-    } 
+        this.resetPolls();
+    }
   }
 
-  addItem(form2){
-    console.log('ADD ITEM!!!');
-    if(form2.$valid) {
-        console.log("this.poll.nextItem: "+this.nextItem);
-        this.poll.items.push({name:this.nextItem});
 
-    } 
+  addItem(){
+    if (this.nextItem !== undefined && this.nextItem !== null && this.nextItem.length > 0) {
+        this.poll.items.push({
+          name:this.nextItem,
+          votes: 0,
+          id: this.countItems
+      });
+      this.countItems++;
+    }
   }
+  
+  // TODO: Remove and "re-arrange" the Item array [index = this.selectedRow]
+  removeItem(){
+    console.log("removing item: "+this.selectedRow);
+    this.countItems--;
+  }
+
+  rowHighilited=function(row)
+    {
+      this.selectedRow = row;    
+    }
+
+// Reset the poll and allow for the insert of a new one
+// TODO: Fazer reset do poll (não fica bem definido e qdo tento adicionar item depois do submit, estoira com o push() pq não conhece items como [])
+    resetPolls(){
+       // this.poll = new this.Poll();
+        this.submitted = false;
+          this.nextItem='';
+  this.selectedRow=0;
+  this.countItems=0;
+    }
+
 }
-
-
 
 
 export default angular.module('smgVotingAppApp.newpoll', [uiRouter])

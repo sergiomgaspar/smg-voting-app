@@ -65,7 +65,7 @@ export class AboutComponent {
 		},
 		{
 			techName: "MongoDB",
-			description: "MongoDB (from hu<b>mongo</b>us) is a free and open-source cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemas.",
+			description: "MongoDB (from humongous) is a free and open-source cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemas.",
 			url: "https://www.mongodb.com/",
 			image: "assets/images/mongodb.png",
 			alt_image: "MongoDB Logo"
