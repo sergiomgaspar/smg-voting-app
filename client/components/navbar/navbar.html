@@ -18,6 +18,8 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
+        <li ng-show="$ctrl.isLoggedIn()"><a ui-sref="newpoll">New Poll</a></li>
+        <li ng-show="$ctrl.isLoggedIn()"><a ui-sref="mypolls">My Polls</a></li>
         <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
         <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></li>
         <li ng-show="$ctrl.isLoggedIn()"><p class="navbar-text">Hello {{ $ctrl.getCurrentUser().name }}</p> </li>

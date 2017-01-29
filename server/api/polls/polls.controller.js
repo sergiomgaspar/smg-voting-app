@@ -70,18 +70,27 @@ export function index(req, res) {
     .catch(handleError(res));
 }
 
-// Gets a single Polls from the DB
+/* Get Polls from db by user */
+/* To implement: add validation that userID = loggedUser */
 export function show(req, res) {
-  return Polls.findById(req.params.id).exec()
-    .then(handleEntityNotFound(res))
-    .then(respondWithResult(res))
-    .catch(handleError(res));
+
+  //console.log("Searching polls created by user:"+req.params.id);
+  var poll = new Polls({ createWhoId: req.params.id });
+
+  if (req.params.id === 'count') 
+    return Polls.count().exec()
+      .then(handleEntityNotFound(res))
+      .then(respondWithResult(res))
+      .catch(handleError(res));
+  else
+    return poll.findByUser().lean().exec()
+      .then(handleEntityNotFound(res))
+      .then(respondWithResult(res))
+      .catch(handleError(res));
 }
 
 // Creates a new Polls in the DB
 export function create(req, res) {
-  console.log("++++SMG - RECEIVED POST REQUEST");
-  console.log("++++SMG - REQ: "+JSON.stringify(req.body));
   return Polls.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));

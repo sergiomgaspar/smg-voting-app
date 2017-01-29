@@ -15,10 +15,6 @@ export class NavbarComponent {
     {
     title: 'Polls',
     state: 'polls'
-  },
-    {
-    title: 'New Poll',
-    state: 'newpoll'
   }
   ];
   isLoggedIn: Function;

@@ -1,13 +1,14 @@
 'use strict';
 
 import angular from 'angular';
-// import ngAnimate from 'angular-animate';
+import ngAnimate from 'angular-animate';
 import ngCookies from 'angular-cookies';
 import ngResource from 'angular-resource';
 import ngSanitize from 'angular-sanitize';
 
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
+import chartJs from  'chart.js';
 // import ngMessages from 'angular-messages';
 // import ngValidationMatch from 'angular-validation-match';
 
@@ -32,7 +33,7 @@ import AboutComponent from './about/about.component';
 import './app.scss';
 
 angular.module('smgVotingAppApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, _Auth,
-  account, admin, navbar, footer, main, constants, util,PollsComponent, NewpollComponent, MypollsComponent, AboutComponent
+  account, admin, navbar, footer, main, constants, util, PollsComponent, NewpollComponent, MypollsComponent, AboutComponent,
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
