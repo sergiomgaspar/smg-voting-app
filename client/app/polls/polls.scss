@@ -9,6 +9,14 @@
 #pollsTable{
     margin: 10px auto;
 }
+ 
+ #pollsTable {
+  display: block;
+  height: 250px;
+  overflow-y: scroll;
+  
+ }
+
 
 #pollsTitle, #pollDetailsTitle, #pollsVoteTitle{
     color: #4A4DF8;

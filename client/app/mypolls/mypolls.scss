@@ -2,6 +2,13 @@
     text-align: center;
 }
 
+ #pollsTable {
+  display: block;
+  height: 250px;
+  overflow-y: scroll;
+  
+ }
+ 
 // Delete poll
 .deletePollButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
