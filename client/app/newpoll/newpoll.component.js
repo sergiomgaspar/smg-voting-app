@@ -114,6 +114,9 @@ export class NewpollComponent {
 		this.nextItem = '';
 		this.selectedRow = 0;
 		this.countItems = 0;
+		this.poll.title = '';
+		this.poll.description = '';
+		this.poll.items.splice(0, this.poll.items.length);
 	}
 
 }
