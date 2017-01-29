@@ -95,6 +95,7 @@ body{
     color:#aaa;
     text-shadow:1px 1px 1px #fff;
 }
+ 
 
 /* featTable Style */
 table.featTable{
@@ -104,29 +105,43 @@ table.featTable{
     line-height: 1.4em;
     font-style: normal;
     border-collapse:separate;
-    
+    margin: 0px auto;
 }
 .featTable thead th{
     padding:15px;
     color:#fff;
-    text-shadow:1px 1px 1px #568F23;
-    border:1px solid #93CE37;
-    border-bottom:3px solid #9ED929;
-    background-color:#9DD929;
+    //text-shadow:1px 1px 1px #568F23;
+    //border:1px solid #93CE37;
+    //border-bottom:3px solid #9ED929;
+    //background-color:#9DEEFA; //9DD929;
+    
+    text-shadow:1px 1px 1px #182BF8; //568F23;
+    background-color:#9DEEFA; //9DD929;
+    border:1px solid #182BF8; //#93CE37;
+    border-bottom:3px solid #3748FC; //#9ED929;
+
     background:-webkit-gradient(
+        linear,
+        left bottom,
+        right top,
+        color-stop(0.02, rgb(71,86,244)),
+        color-stop(0.51, rgb(97,110,249)),
+        color-stop(0.87, rgb(132,142,251))
+        );
+/*    background:-webkit-gradient(
         linear,
         left bottom,
         left top,
         color-stop(0.02, rgb(123,192,67)),
         color-stop(0.51, rgb(139,198,66)),
         color-stop(0.87, rgb(158,217,41))
-        );
-    background: -moz-linear-gradient(
+        );*/
+  /*  background: -moz-linear-gradient(
         center bottom,
         rgb(123,192,67) 2%,
         rgb(139,198,66) 51%,
         rgb(158,217,41) 87%
-        );
+        );*/
     -webkit-border-top-left-radius:5px;
     -webkit-border-top-right-radius:5px;
     -moz-border-radius:5px 5px 0px 0px;
@@ -139,25 +154,33 @@ table.featTable{
 }
 .featTable tbody th{
     color:#fff;
-    text-shadow:1px 1px 1px #568F23;
-    background-color:#9DD929;
-    border:1px solid #93CE37;
-    border-right:3px solid #9ED929;
+    text-shadow:1px 1px 1px #182BF8; //568F23;
+    background-color:#9DEEFA; //9DD929;
+    border:1px solid #182BF8; //#93CE37;
+    border-right:3px solid #3748FC; //#9ED929;
     padding:0px 10px;
-    background:-webkit-gradient(
+    /*background:-webkit-gradient(
         linear,
         left bottom,
         right top,
         color-stop(0.02, rgb(158,217,41)),
         color-stop(0.51, rgb(139,198,66)),
         color-stop(0.87, rgb(123,192,67))
+        );*/
+    background:-webkit-gradient(
+        linear,
+        left bottom,
+        right top,
+        color-stop(0.02, rgb(71,86,244)),
+        color-stop(0.51, rgb(97,110,249)),
+        color-stop(0.87, rgb(132,142,251))
         );
-    background: -moz-linear-gradient(
+   /*background: -moz-linear-gradient(
         left bottom,
         rgb(158,217,41) 2%,
         rgb(139,198,66) 51%,
         rgb(123,192,67) 87%
-        );
+        );*/
     -moz-border-radius:5px 0px 0px 5px;
     -webkit-border-top-left-radius:5px;
     -webkit-border-bottom-left-radius:5px;
@@ -169,7 +192,7 @@ table.featTable{
 .featTable tbody td{
     padding:10px;
     text-align:center;
-    background-color:#DEF3CA;
+    background-color:#E2E2FC; //DEF3CA;
     border: 2px solid #E7EFE0;
     -moz-border-radius:2px;
     -webkit-border-radius:2px;

@@ -76,6 +76,7 @@ polls = [];
   rowSelected = function(row) {
 		this.selectedRow = row;
     this.selectedItemRow = -1;
+    this.newItemName = '';
     this.refreshGraph(); 
 	}
 

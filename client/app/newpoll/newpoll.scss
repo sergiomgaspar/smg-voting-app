@@ -1,11 +1,3 @@
-.selected {
-  background-color: red;
-}
-
-.active{
-    background:yellow;
-    border:1px solid;
-}
 
 #errorMsg{
     color:darkred;
@@ -15,11 +7,6 @@
     cursor: pointer;
 }
 
-.animate-enter {
-   -webkit-transition: 1s linear all; /* Chrome */
-   transition: 1s linear all;
-   opacity: 0;
-}
-.animate-enter.animate-enter-active {
-   opacity: 1;
-}
+
+
+

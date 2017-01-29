@@ -4,13 +4,13 @@
 
 <div class="container">
    <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-12" id = "topText">
          <h1>My Polls</h1>
          <h4>Below is the list of polls created by you</h4>
       </div>
       <div class="col-sm-12">
-          <!-- List Polls -->
-        <div class="table-responsive" id="pollsTable">
+        <!-- List Polls -->
+        <div id="pollsTable">
         <table class="table">
             <thead id="pollsTitle">
                 <tr>
@@ -27,28 +27,31 @@
                 </tr>
         </table>
         </div>
-      </div>
+      
       <!-- Delete Poll Button -->
         <div>
-        <button class="btn btn-inverse btn-lg btn-register" 
+        <button class="deletePollButton" 
             ng-click="mypollsCtrl.deletePoll()"
             ng-show="mypollsCtrl.selectedRow > -1">
             Delete Poll
         </button>
         </div>
+        </div>
    </div>
 
    <div class="col-sm-12" ng-show="mypollsCtrl.selectedRow > -1">
-       <div id = "pollDetails">
-           <h3>Title:</h3>
+       <div class="col-sm-12">
+       <div class="col-sm-6" id = "pollDetails">
+           <h3 id="pollDetailsTitle">Title:</h3>
            <h4>{{mypollsCtrl.polls[mypollsCtrl.selectedRow].title}}</h4>
            <br>
-           <h3>Description:</h3>
+           <h3  id="pollDetailsTitle">Description:</h3>
            <h4>{{mypollsCtrl.polls[mypollsCtrl.selectedRow].description}}</h4>
        </div>
-       <div id = "pollVote">
+       <div class="col-sm-6">
+       <div  id = "pollVote">
         <!-- List items -->
-        <div class="table-responsive" id="pollsVoteTable">
+        <div id="pollsVoteTable">
         <table class="table">
             <thead id="pollsVoteTitle">
                 <tr>
@@ -63,25 +66,26 @@
                 </tr>
         </table>
         </div>
+       </div>
         <br>
         <!-- Item Buttons -->
         <div>
-        <button class="btn btn-inverse btn-lg btn-register" 
+        <button class="deleteButton" 
             ng-click="mypollsCtrl.removeItem()"
             ng-show="mypollsCtrl.selectedItemRow > -1">
             Remove Item
         </button>
         <div class="form-group">
-               <label>New item name</label>
+               <label>New item name:</label>
                <input type="text" name="title" class="form-control" ng-model="mypollsCtrl.newItemName"
                   required/>
             </div>
-        <button class="btn btn-inverse btn-lg btn-register" 
+        <button class="addButton" 
             ng-click="mypollsCtrl.addItem()"
             ng-show="mypollsCtrl.selectedRow > -1 && mypollsCtrl.newItemName.length > 0">
             Add Item
         </button>
-        
+        </div>
         </div>
        </div>
         <div id="pollChartDiv">

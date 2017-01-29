@@ -4,14 +4,14 @@
 
 <div class="container">
    <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-12" id = "topText">
          <h1>Polls</h1>
          <h4>Below is the list of existing polls.. Feel free to start voting</h4>
          <blockquote>Thinking isn't agreeing or disagreeing. That's voting! - <i><a href="https://www.wikipedia.org/wiki/Robert_Frost" target="_blank">Robert Frost</a></i></blockquote>
       </div>
       <div class="col-sm-12">
           <!-- List Polls -->
-        <div class="table-responsive" id="pollsTable">
+        <div  id="pollsTable">
         <table class="table">
             <thead id="pollsTitle">
                 <tr>
@@ -32,20 +32,24 @@
    </div>
 
    <div class="col-sm-12" ng-show="pollsCtrl.selectedRow > -1">
+       <div class="col-sm-6">
        <div id = "pollDetails">
-           <h3>Title:</h3>
+           <h3 id="pollDetailsTitle"><b>Title:</b></h3>
            <h4>{{pollsCtrl.polls[pollsCtrl.selectedRow].title}}</h4>
            <br>
-           <h3>Description:</h3>
+           <h3 id="pollDetailsTitle"><b>Description:</b></h3>
            <h4>{{pollsCtrl.polls[pollsCtrl.selectedRow].description}}</h4>
        </div>
+       </div>
+           <div class="col-sm-6">
        <div id = "pollVote">
+       
         <!-- List items -->
-        <div class="table-responsive" id="pollsVoteTable">
+        <div id="pollsVoteTable">
         <table class="table">
             <thead id="pollsVoteTitle">
                 <tr>
-                    <th>Item</th>
+                    <th>Items</th>
                 </tr>
             </thead>
             <tbody id="pollListBody">
@@ -59,16 +63,23 @@
         <br>
         <!-- Vote Button -->
         <div>
-        <button class="btn btn-inverse btn-lg btn-register" 
+        <!-- class="btn btn-inverse btn-lg btn-register" -->
+        <button 
+            class="voteButton"
             ng-click="pollsCtrl.voteItem()"
             ng-show="pollsCtrl.selectedItemRow > -1">
             Vote
         </button>
         </div>
        </div>
+       </div>
+       
         <div id="pollChartDiv">
-        <canvas id="pollsChart"  class="chart chart-bar"
-        chart-data="{{pollsCtrl.chart.data}}" chart-labels="{{pollsCtrl.chart.labels}}" chart-series="{{pollsCtrl.chart.series}}"></canvas> 
+        <canvas id="pollsChart"  
+        class="chart chart-bar"
+        chart-data="{{pollsCtrl.chart.data}}" 
+        chart-labels="{{pollsCtrl.chart.labels}}" 
+        chart-series="{{pollsCtrl.chart.series}}"></canvas> 
         </div>
    </div>
 </div>

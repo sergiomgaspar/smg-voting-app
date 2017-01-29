@@ -1,9 +1,9 @@
 <div class="container">
    <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-12" id = "topText">
          <h1>New Poll</h1>
          <h4>Use the fields below to add a new poll to the library</h4>
-         <h4>The poll create will become available to any user (including guest users)</h4>
+         <h4>The poll you create will become available to any user (including guest users)</h4>
       </div>
       <div class="col-sm-12">
          <form class="form" name="form" ng-submit="newpollCtrl.addPoll(form)" novalidate>
@@ -44,11 +44,11 @@
       </div>
    </form>
    <!-- Add item Button -->
-   <button class="btn btn-inverse btn-lg btn-register" ng-click="newpollCtrl.addItem()">
+   <button class="addButton" ng-click="newpollCtrl.addItem()">
    Add Item
    </button>
    <!-- Remove item Button -->
-   <button class="btn btn-inverse btn-lg btn-register" ng-click="newpollCtrl.removeItem()">
+   <button class="deleteButton" ng-click="newpollCtrl.removeItem()">
    Remove Item
    </button>
 
@@ -76,7 +76,7 @@
 </div>
 <!-- Add Poll Button -->
 <div>
-   <button class="btn btn-inverse btn-lg btn-register" ng-click="newpollCtrl.addPoll(form)">
+   <button class="voteButton" ng-click="newpollCtrl.addPoll(form)">
    Add Poll
    </button>
 </div>
