@@ -18,20 +18,4 @@ PollsSchema.methods.findByUser = function(cb) {
   //return this.model('Polls').find({  }, cb);
 };
 
-/* Count existing polls */
-/*PollsSchema.methods.findByUser = function(cb) {  
-  return this.model('Polls').find({ createWhoId: this.createWhoId }, cb);
-  //return this.model('Polls').find({  }, cb);
-};*/
-
-/* toJSON implementation */
-/*PollsSchema.options.toJSON = {
-    transform: function(doc, ret, options) {
-        ret.id = ret._id;
-        delete ret._id;
-        delete ret.__v;
-        return ret;
-    }
-};*/
- 
 export default mongoose.model('Polls', PollsSchema);

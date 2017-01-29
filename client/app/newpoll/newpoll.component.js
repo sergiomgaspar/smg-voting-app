@@ -1,9 +1,16 @@
 'use strict';
 const angular = require('angular');
-
 const uiRouter = require('angular-ui-router');
-
 import routes from './newpoll.routes';
+
+/* ****************************************************************** */
+/* NewpollComponent                                                   */
+/* Component to handle the creation of polls by the user  			  */
+/*                                                                    */
+/* date: 29/01/2017                                                   */
+/* author: sergiomgaspar.dev@gmail.com                                */
+/* version: 1.0                                                       */
+/* ****************************************************************** */
 
 type Poll = {
 	title: string;
@@ -62,7 +69,6 @@ export class NewpollComponent {
 					data: msg
 				})
 				.then(function(response) {
-						//this.$state.go('main');
 						console.log("Poll added");
 					},
 					function(response) { // optional
@@ -72,8 +78,8 @@ export class NewpollComponent {
 		}
 	}
 
-	updatePosted(status){
-		if (status) 
+	updatePosted(status) {
+		if (status)
 			this.PostOK = true;
 		else
 			this.PostError = true;
@@ -81,7 +87,7 @@ export class NewpollComponent {
 
 	addItem() {
 		if (this.nextItem !== undefined && this.nextItem !== null && this.nextItem.length > 0) {
-			
+
 			this.poll.items.push({
 				name: this.nextItem,
 				votes: 0,
@@ -92,7 +98,6 @@ export class NewpollComponent {
 	}
 
 	removeItem(rowNum) {
-		//console.log("removing item: " + this.selectedRow);
 		var removed = this.poll.items.splice(rowNum, 1);
 		for (var i = 0; i < this.poll.items.length; i++) {
 			this.poll.items[i].id = i;
@@ -105,7 +110,6 @@ export class NewpollComponent {
 	}
 
 	resetPolls() {
-		// this.poll = new this.Poll();
 		this.submitted = false;
 		this.nextItem = '';
 		this.selectedRow = 0;

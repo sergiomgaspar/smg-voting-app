@@ -1,98 +1,93 @@
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-charts/0.2.7/angular-charts.min.js"></script>
-
 <div class="container">
-   <div class="row">
-      <div class="col-sm-12" id = "topText">
-         <h1>My Polls</h1>
-         <h4>Below is the list of polls created by you</h4>
-      </div>
-      <div class="col-sm-12">
-        <!-- List Polls -->
-        <div id="pollsTable">
-        <table class="table">
-            <thead id="pollsTitle">
-                <tr>
-                    <th>Poll Title</th>
-                    <th>Poll Description</th>
-                </tr>
-            </thead>
-            <tbody id="pollListBody">
-                <tr ng-repeat="poll in mypollsCtrl.polls" 
-                        ng-class="{active:$index==mypollsCtrl.selectedRow}"
-                        ng-click="mypollsCtrl.rowSelected($index)">
-                    <td>{{poll.title}}</td>
-                    <td>{{poll.description}}</td>
-                </tr>
-        </table>
-        </div>
-      
-      <!-- Delete Poll Button -->
-        <div>
-        <button class="deletePollButton" 
-            ng-click="mypollsCtrl.deletePoll()"
-            ng-show="mypollsCtrl.selectedRow > -1">
-            Delete Poll
-        </button>
-        </div>
-        </div>
-   </div>
-
-   <div class="col-sm-12" ng-show="mypollsCtrl.selectedRow > -1">
-       <div class="col-sm-12">
-       <div class="col-sm-6" id = "pollDetails">
-           <h3 id="pollDetailsTitle">Title:</h3>
-           <h4>{{mypollsCtrl.polls[mypollsCtrl.selectedRow].title}}</h4>
-           <br>
-           <h3  id="pollDetailsTitle">Description:</h3>
-           <h4>{{mypollsCtrl.polls[mypollsCtrl.selectedRow].description}}</h4>
-       </div>
-       <div class="col-sm-6">
-       <div  id = "pollVote">
-        <!-- List items -->
-        <div id="pollsVoteTable">
-        <table class="table">
-            <thead id="pollsVoteTitle">
-                <tr>
-                    <th>Item</th>
-                </tr>
-            </thead>
-            <tbody id="pollListBody">
-                <tr ng-repeat="item in mypollsCtrl.polls[mypollsCtrl.selectedRow].items" 
-                        ng-class="{active:$index==mypollsCtrl.selectedItemRow}"
-                        ng-click="mypollsCtrl.itemSelected($index)">
-                    <td><b>{{item.name}}</b> <i>({{item.votes}} votes)</i></td>
-                </tr>
-        </table>
-        </div>
-       </div>
-        <br>
-        <!-- Item Buttons -->
-        <div>
-        <button class="deleteButton" 
-            ng-click="mypollsCtrl.removeItem()"
-            ng-show="mypollsCtrl.selectedItemRow > -1">
-            Remove Item
-        </button>
-        <div class="form-group">
-               <label>New item name:</label>
-               <input type="text" name="title" class="form-control" ng-model="mypollsCtrl.newItemName"
-                  required/>
-            </div>
-        <button class="addButton" 
-            ng-click="mypollsCtrl.addItem()"
-            ng-show="mypollsCtrl.selectedRow > -1 && mypollsCtrl.newItemName.length > 0">
-            Add Item
-        </button>
-        </div>
-        </div>
-       </div>
-        <div id="pollChartDiv">
-        <canvas id="pollsChart"  class="chart chart-bar"
-        chart-data="{{mypollsCtrl.chart.data}}" chart-labels="{{mypollsCtrl.chart.labels}}" chart-series="{{mypollsCtrl.chart.series}}"></canvas> 
-        </div>
-   </div>
+	<div class="row">
+		<div class="col-sm-12" id = "topText">
+			<h1>My Polls</h1>
+			<h4>Below is the list of polls created by you</h4>
+		</div>
+		<div class="col-sm-12">
+			<!-- List Polls -->
+			<div id="pollsTable">
+				<table class="table">
+					<thead id="pollsTitle">
+						<tr>
+							<th>Poll Title</th>
+							<th>Poll Description</th>
+						</tr>
+					</thead>
+					<tbody id="pollListBody">
+						<tr ng-repeat="poll in mypollsCtrl.polls" 
+							ng-class="{active:$index==mypollsCtrl.selectedRow}"
+							ng-click="mypollsCtrl.rowSelected($index)">
+							<td>{{poll.title}}</td>
+							<td>{{poll.description}}</td>
+						</tr>
+				</table>
+			</div>
+			<!-- Delete Poll Button -->
+			<div>
+				<button class="deletePollButton" 
+					ng-click="mypollsCtrl.deletePoll()"
+					ng-show="mypollsCtrl.selectedRow > -1">
+				Delete Poll
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-12" ng-show="mypollsCtrl.selectedRow > -1">
+		<div class="col-sm-12">
+			<div class="col-sm-6" id = "pollDetails">
+				<h3 id="pollDetailsTitle">Title:</h3>
+				<h4>{{mypollsCtrl.polls[mypollsCtrl.selectedRow].title}}</h4>
+				<br>
+				<h3  id="pollDetailsTitle">Description:</h3>
+				<h4>{{mypollsCtrl.polls[mypollsCtrl.selectedRow].description}}</h4>
+			</div>
+			<div class="col-sm-6">
+				<div  id = "pollVote">
+					<!-- List items -->
+					<div id="pollsVoteTable">
+						<table class="table">
+							<thead id="pollsVoteTitle">
+								<tr>
+									<th>Item</th>
+								</tr>
+							</thead>
+							<tbody id="pollListBody">
+								<tr ng-repeat="item in mypollsCtrl.polls[mypollsCtrl.selectedRow].items" 
+									ng-class="{active:$index==mypollsCtrl.selectedItemRow}"
+									ng-click="mypollsCtrl.itemSelected($index)">
+									<td><b>{{item.name}}</b> <i>({{item.votes}} votes)</i></td>
+								</tr>
+						</table>
+					</div>
+				</div>
+				<br>
+				<!-- Item Buttons -->
+				<div>
+					<button class="deleteButton" 
+						ng-click="mypollsCtrl.removeItem()"
+						ng-show="mypollsCtrl.selectedItemRow > -1">
+					Remove Item
+					</button>
+					<div class="form-group">
+						<label>New item name:</label>
+						<input type="text" name="title" class="form-control" ng-model="mypollsCtrl.newItemName"
+							required/>
+					</div>
+					<button class="addButton" 
+						ng-click="mypollsCtrl.addItem()"
+						ng-show="mypollsCtrl.selectedRow > -1 && mypollsCtrl.newItemName.length > 0">
+					Add Item
+					</button>
+				</div>
+			</div>
+		</div>
+		<div id="pollChartDiv">
+			<canvas id="pollsChart"  class="chart chart-bar"
+				chart-data="{{mypollsCtrl.chart.data}}" chart-labels="{{mypollsCtrl.chart.labels}}" chart-series="{{mypollsCtrl.chart.series}}"></canvas>
+		</div>
+	</div>
 </div>
 <br>
-

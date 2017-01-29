@@ -1,9 +1,18 @@
 'use strict';
 const angular = require('angular');
-
 const uiRouter = require('angular-ui-router');
 
 import routes from './about.routes';
+
+/* ****************************************************************** */
+/* aboutComponent                                                  	  */
+/* Component to handle the about section of the page 		          */
+/* Ideally would be JSON over http, but its static so manually created */
+/*                                                                    */
+/* date: 29/01/2017                                                   */
+/* author: sergiomgaspar.dev@gmail.com                                */
+/* version: 1.0                                                       */
+/* ****************************************************************** */
 
 export class AboutComponent {
 
