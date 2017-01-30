@@ -1,6 +1,6 @@
 # FCC Voting App
 
-FCC Voting App is a stack JavaScript app to implement a voting app where a user can create voting polls and vote on existing polls
+FCC Voting App is a fullstack JavaScript app to implement a voting app where a user can create voting polls and vote on existing polls
 
 * [FreeCodeCamp] - Link to the exercice
 * [Heroku] - Online deployed version
