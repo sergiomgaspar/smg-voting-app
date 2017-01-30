@@ -10,13 +10,13 @@ FCC Voting App is a stack JavaScript app to implement a voting app where a user 
 The app allows for a user to post, delete and vote on an existing poll. Below is a list of use cases.
 
   - **Use-case 1:** As an authenticated user, I can keep my polls and come back later to access them.
-  - **Use-case 1:** As an authenticated user, I can share my polls with my friends.
-  - **Use-case 1:** As an authenticated user, I can see the aggregate results of my polls.
-  - **Use-case 1:** As an authenticated user, I can delete polls that I decide I don't want anymore.
-  - **Use-case 1:** As an authenticated user, I can create a poll with any number of possible items.
-  - **Use-case 1:** As an unauthenticated or authenticated user, I can see and vote on everyone's polls.
-  - **Use-case 1:** As an unauthenticated or authenticated user, I can see the results of polls in chart form.
-  - **Use-case 1:** As an authenticated user, if I don't like the options on a poll, I can create a new option.
+  - **Use-case 2:** As an authenticated user, I can share my polls with my friends.
+  - **Use-case 3:** As an authenticated user, I can see the aggregate results of my polls.
+  - **Use-case 4:** As an authenticated user, I can delete polls that I decide I don't want anymore.
+  - **Use-case 5:** As an authenticated user, I can create a poll with any number of possible items.
+  - **Use-case 6:** As an unauthenticated or authenticated user, I can see and vote on everyone's polls.
+  - **Use-case 7:** As an unauthenticated or authenticated user, I can see the results of polls in chart form.
+  - **Use-case 8:** As an authenticated user, if I don't like the options on a poll, I can create a new option.
 
 ## Local Installation
 
