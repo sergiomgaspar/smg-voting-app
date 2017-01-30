@@ -1,28 +1,51 @@
-# smg-voting-app
+# FCC Voting App
 
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.1.2.
+FCC Voting App is a stack JavaScript app to implement a voting app where a user can create voting polls and vote on existing polls
 
-## Getting Started
+* [FreeCodeCamp] - Link to the exercice
+* [Heroku] - Online deployed version
 
-### Prerequisites
+### APP description
 
-- [Git](https://git-scm.com/)
-- [Node.js and npm](nodejs.org) Node >= 4.x.x, npm >= 2.x.x
-- [Gulp](http://gulpjs.com/) (`npm install --global gulp`)
-- [MongoDB](https://www.mongodb.org/) - Keep a running daemon with `mongod`
+The app allows for a user to post, delete and vote on an existing poll. Below is a list of use cases.
 
-### Developing
+  - **Use-case 1:** As an authenticated user, I can keep my polls and come back later to access them.
+  - **Use-case 1:** As an authenticated user, I can share my polls with my friends.
+  - **Use-case 1:** As an authenticated user, I can see the aggregate results of my polls.
+  - **Use-case 1:** As an authenticated user, I can delete polls that I decide I don't want anymore.
+  - **Use-case 1:** As an authenticated user, I can create a poll with any number of possible items.
+  - **Use-case 1:** As an unauthenticated or authenticated user, I can see and vote on everyone's polls.
+  - **Use-case 1:** As an unauthenticated or authenticated user, I can see the results of polls in chart form.
+  - **Use-case 1:** As an authenticated user, if I don't like the options on a poll, I can create a new option.
 
-1. Run `npm install` to install server dependencies.
+## Local Installation
 
-2. Run `mongod` in a separate shell to keep an instance of the MongoDB Daemon running
+You'll need to have the latest verison of node.js installed. Either use your OS's package manager or follow the installation instructions on the [official website](http://nodejs.org).
 
-3. Run `gulp serve` to start the development server. It should automatically open the client in your browser when ready.
+Next, [install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) if it is not already installed. To clone this repository to your local machine, open a command line interface and navigate to your projects directory.
 
-## Build & development
+You will also need Gulp (`npm install --global gulp`) and MongoDB. Then type:
 
-Run `gulp build` for building and `gulp serve` for preview.
+`$ git clone https://github.com/sergiomgaspar/smg-voting-app.git`
 
-## Testing
+Move to the `smg-voting-app` subdirectory and type `npm install`. This installs all of the APP dependencies.
 
-Running `npm test` will run the unit tests with karma.
+Finally, type `gulp serve` to start the application. If all goes well, it will be available at `http://localhost:3000`.
+
+To deploy a "production-ready" version of the app type `gulp build` and deploy the contents of the "dist" folder.
+
+### IMPORTANT
+This node app uses MongoDB (free mongoLab instance). The user/password are not correct and you will not be able to logon. Create your instance in mongoLab and **allways define the user and password and environment variables** *(never leave them inside code commited in gitHub!!!)*.
+
+## Technologies used
+
+In the about section of the page the used technologies are listed and described
+
+## License
+
+[![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png)](http://creativecommons.org/publicdomain/zero/1.0/)
+
+To the extent possible under law, the author has waived all copyright and related or neighboring rights to this work.
+
+[FreeCodeCamp]: <https://www.freecodecamp.com/challenges/build-a-voting-app>
+[Heroku]: <https://smg-voting-app.herokuapp.com/>
