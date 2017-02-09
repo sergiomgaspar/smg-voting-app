@@ -16,11 +16,6 @@ import routes from './about.routes';
 
 export class AboutComponent {
 
-	/*@ngInject*/
-	constructor() {
-		this.message = 'Hello';
-	}
-
 	frontEndTech = [{
 			techName: "HTML5",
 			description: "Hypertext Markup Language revision 5 (HTML5) is a markup language for the structure and presentation of World Wide Web contents. HTML5 supports the traditional HTML and XHTML-style syntax and other new features in its markup. It is the standard programming language for describing the contents and appearance of Web pages.",
